@@ -1,0 +1,76 @@
+.detail_wrap{
+    /* border: 1px solid blue; */
+    width: 1290px;
+    height: 800px;
+    margin: 110px auto 0 auto;
+}
+.detail_contents_wrap{
+    width: 1100px;
+    height: 500px;
+    margin: 0 auto;
+}
+.detail_img_wrap{
+    margin: 0 auto;
+    float: left;
+}
+.detail_img_wrap > img{
+    border: 1px solid #eee;
+    width: 387px;
+    height: 500px;
+}
+/* 상품 설명 */
+.detail_txt{
+    float: right;
+    margin: 0 auto;
+    width: 600px;
+    height: 381px;
+}
+.detail_txt > h1{
+    font-family: NanumSquareNeo2;
+    width: 565px;
+    height: 35px;
+    margin-top: 30px;
+    margin-bottom: 15px;
+    font-size: 17px;
+    float: left;
+}
+.detail_txt > .share{
+    width: 35px;
+    height: 35px;
+    float: right;
+    margin-top: 20px;
+}
+.detail_txt > h2{
+    font-family: NanumSquareNeo4;
+    font-size: 28px;
+    word-break: break-all;
+    margin-bottom: 40px;
+    clear: both;
+}
+.detail_tag{
+    font-size: 15px;
+    border-bottom: 1px solid #eee;
+    margin-bottom: 40px;
+    padding-bottom: 100px;
+    width: 600px;
+}
+.detail_price{
+    font-family: NanumSquareNeo4;
+    font-size: 25px;
+    margin-bottom: 40px;
+}
+.detail_price > span{
+    font-size: 16px;
+    margin-right: 375px;
+}
+/* 버튼 */
+.detail_cart, .detail_buy{
+    width: 285px;
+    height: 50px;
+    border: none;
+}
+.detail_buy{
+    margin-left: 20px;
+    background-color: rgb(85, 190, 96);
+    color: white;
+}
