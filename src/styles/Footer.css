@@ -1,0 +1,79 @@
+@charset "utf-8";
+
+/* 하단 */
+
+/* 하단이미지 */
+.footer_wrap{
+    position: relative;
+}
+.dog{
+    position: absolute;
+    top: 136px;
+    right: 550px;
+    font-size: 0;
+}
+.footer_wrap > .footer_img_wrap{
+    font-size: 0;
+    width: 100%;
+    min-width: 1900px;
+}
+.footer_wrap > .footer_img_wrap > img{
+    width: 100%;
+    margin-top: 50px;
+}
+.footer_wrap > div{
+    height: 300px;
+    width: 100%;
+    min-width: 1900px;
+    background-color: #9a886d;
+}
+.footer_wrap > div > div{
+    width: 1290px;
+    height: 250px;
+    margin: 0 auto;
+    padding-top: 50px;
+}
+.footer_wrap > div > div > address{
+    color: #fff;
+    width: 1000px;
+    height: 160px;
+    margin-top: 22px;
+    float: left;
+    font-size: 19px;
+}
+/* 페이스북 + 인스타그램 + 카카오톡 */
+.footer_wrap > div > div > .sns_wrap{
+    margin-top: 30px;
+    width: 200px;
+    height: 60px;
+    float: right;
+    font-size: 0;
+}
+.footer_wrap > div > div > .sns_wrap > li{
+    display: inline-block;
+    box-sizing: border-box;
+    margin-right: 10px;
+    cursor: pointer;
+}
+.footer_wrap > div > div > .sns_wrap > li:last-child{
+    margin-right: 0;
+}
+/* 하단기업 정보글 */
+.footer_wrap > div > div > address{
+    padding-right: 230px;
+}
+.footer_wrap > div > div > address > p{
+    margin-right: 13px;
+    display: inline-block;
+    margin-top: 5px;
+}
+.footer_wrap > div > div > address > p > span{
+    font-weight: bold;
+    cursor: pointer;
+}
+.footer_wrap > div > div > address > p > span:hover{
+    color: rgb(250, 217, 33);
+}
+.footer_wrap > div > div > address > .copyright{
+    margin-top: 35px;
+}
