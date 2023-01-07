@@ -11,7 +11,6 @@ const Detail = (props) => {
             setAlert(false)
         }, 3500)
         return()=>{
-            console.log(1)
         clearTimeout(timer)
         }
     })
