@@ -119,3 +119,6 @@
 .slick-arrow.slick-hidden {
     display: none;
 }
+.banner_wrap > div{
+    font-size: 0;
+}

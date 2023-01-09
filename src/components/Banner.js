@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import Slider from "react-slick";
 import '../styles/slick-theme.css';
 import '../styles/slick.css';
@@ -17,11 +17,11 @@ const Banner = () => {
     };
     return (
     	<div>
-            <Slider {...settings}>
-            	<div><img src={process.env.PUBLIC_URL + '/images/banner1.jpg'} alt="#" width="1920" height="400"></img></div>
-                <div><img src={process.env.PUBLIC_URL + '/images/banner2.png'} alt="#" width="1920" height="400"></img></div>
-                <div><img src={process.env.PUBLIC_URL + '/images/banner3.png'} alt="#" width="1920" height="400"></img></div>
-                <div><img src={process.env.PUBLIC_URL + '/images/banner4.png'} alt="#" width="1920" height="400"></img></div>
+            <Slider {...settings} className='banner_wrap'>
+            	<div><img src={process.env.PUBLIC_URL + '/images/banner1.jpg'} alt="배너이미지" width="1920" height="400" />배너이미지</div>
+                <div><img src={process.env.PUBLIC_URL + '/images/banner2.png'} alt="배너이미지" width="1920" height="400" />배너이미지</div>
+                <div><img src={process.env.PUBLIC_URL + '/images/banner3.png'} alt="배너이미지" width="1920" height="400" />배너이미지</div>
+                <div><img src={process.env.PUBLIC_URL + '/images/banner4.png'} alt="배너이미지" width="1920" height="400" />배너이미지</div>
             </Slider>
         </div>
     );

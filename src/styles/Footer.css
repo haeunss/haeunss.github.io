@@ -10,12 +10,12 @@
     position: absolute;
     top: 136px;
     right: 550px;
+    font-size: 0;
 }
 .footer_wrap > .footer_img_wrap{
     font-size: 0;
     width: 100%;
     min-width: 1900px;
-    /* object-fit: cover; */
 }
 .footer_wrap > .footer_img_wrap > img{
     width: 100%;

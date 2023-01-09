@@ -1,0 +1,18 @@
+@charset "utf-8";
+
+.notice{
+    text-align: center;
+    height: 60px;
+    line-height: 50px;
+    width: 1900px;
+}
+.notice > button{
+    border: none;
+    outline: none;
+    background-color: rgb(255, 255, 255);
+    font-weight: bold;
+    height: 60px;
+}
+.notice > button:hover{
+    color: rgb(255, 98, 41);
+}
