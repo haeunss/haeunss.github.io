@@ -3,7 +3,6 @@ import React, { useState } from 'react'
 import { useSelector } from "react-redux";
 
 function Cart(){
-    // let a = useSelector((state)=> state.user )
     let cart = useSelector((state)=> state.cart)
     console.log(cart)
 
