@@ -1,13 +1,19 @@
 import '../styles/Cart.css';
-import React, { useState } from 'react'
-import { useSelector } from "react-redux";
+import React from 'react'
+import { useDispatch, useSelector } from "react-redux";
+import { changeName } from "./Store.js"
 
 function Cart(){
     let cart = useSelector((state)=> state.cart)
+    let user = useSelector((state)=> state.user)
+    let dispatch = useDispatch()
     console.log(cart)
 
     return(
         <div>
+
+            { user }의 장바구니
+
             <table>
                 <thead>
                     <tr>
@@ -24,7 +30,11 @@ function Cart(){
                                 <td>{ cart[i].id }</td>
                                 <td>{ cart[i].name }</td>
                                 <td>{ cart[i].count }</td>
-                                <td>블라블라</td>
+                                <td>
+                                    <button onClick={()=>{
+                                        dispatch(changeName())
+                                    }}>+</button>
+                                </td>
                             </tr>
                         )
                     }
