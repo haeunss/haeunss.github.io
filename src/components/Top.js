@@ -18,7 +18,7 @@ const Top = () => {
           <ul className='quick'>
             <li>로그인</li>
             <li>회원가입</li>
-            <li>장바구니</li>
+            <li onClick={()=>{navigate('/top/cart')}}>장바구니</li>
             <li>마이페이지</li>
           </ul>
         </div>
@@ -26,21 +26,19 @@ const Top = () => {
         <nav className='main_navi'>
           <ul>
             <li onClick={()=>{navigate('/top/allprod')}}>전체상품</li>
-            <li>베스트</li>
-            <li>아웃도어</li>
-            <li>인도어</li>
-            <li>고양이</li>
-            <li>불독전용</li>
-            <li>브랜드별</li>
+            <li onClick={()=>{navigate('/top/outdoor')}}>아웃도어</li>
+            <li onClick={()=>{navigate('/top/indoor')}}>인도어</li>
+            <li onClick={()=>{navigate('/top/milkpepper')}}>밀크앤페퍼</li>
+            <li onClick={()=>{navigate('/top/maxbone')}}>맥스본</li>
+            <li onClick={()=>{navigate('/top/petsochic')}}>펫소시크</li>
+            <li>묻고 답하기</li>
             <li>공지사항</li>
-            <li>리뷰이벤트</li>
             <li>쇼핑스토리</li>
           </ul>
         </nav>
       </div>
     </header>
   );
-
 }
 
 export default Top;

@@ -49,7 +49,7 @@ function All(props){
   let navigate = useNavigate();
   return(
     <div className='product_wrap' onClick={()=>{navigate('/detail/'+props.all.id)}}>
-      <p className='all_product_img_wrap'><img src={props.all.image} width='295' height='381' alt='베스트 상품 이미지' /></p>
+      <p className='all_product_img_wrap'><img src={props.all.image} width='295' height='381' alt='전체 상품 이미지' /></p>
       <h4>{props.all.title}</h4>
       <p className="all_product_price">{props.all.price}원</p>
     </div>

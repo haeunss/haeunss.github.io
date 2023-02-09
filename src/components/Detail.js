@@ -11,7 +11,7 @@ const Detail = (props) => {
             setAlert(false)
         }, 3500)
         return()=>{
-        clearTimeout(timer)
+            clearTimeout(timer)
         }
     })
 
@@ -44,7 +44,7 @@ const Detail = (props) => {
                         <li>- 반품/교환은 미사용 제품에 한해 배송완료 후 7일 이내 고개센터 또는 Q&A 게시판을 통해 접수하여 주십시오.</li>
                         <li>- 상품하자 이외 사이즈, 색상교환 등 단순 변심에 의한 교환/반품의 경우 택배비는 고객부담이며, 무료배송 상품인 경우에도 왕복 택배<br/>&nbsp;&nbsp;&nbsp;비가 발생합니다.</li>
                     </ul>
-                    <p><img src={props.all[id].detail_txt} alt='상품 상세설명 이미지' /></p>
+                    <p><img src={find.detail_txt} alt='상품 상세설명 이미지' /></p>
                 </div>
             </div>
         </div>

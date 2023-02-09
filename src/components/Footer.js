@@ -4,7 +4,7 @@ import '../styles/Footer.css';
 const Footer = () => {
     return(
         <div className='footer_wrap'>
-            <p className='footer_img_wrap'><img src={process.env.PUBLIC_URL + '/images/footer_g.png'} width='1899' height='139' alt='하단이미지'/>하단이미지</p>
+            <p className='footer_img_wrap'><img src='https://github.com/haeunss/haeunss.github.io/blob/main/public/images/footer.PNG?raw=true' width='1899' height='139' alt='하단이미지'/>하단이미지</p>
             <p className='dog'><img src={process.env.PUBLIC_URL + '/images/dog.png'} width='360' height='100' alt='강아지이미지' />강아지이미지</p>
             <div>
                 <div>
