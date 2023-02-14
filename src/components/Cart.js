@@ -1,8 +1,8 @@
 import '../styles/Cart.css';
 import React from 'react'
 import { useDispatch, useSelector } from "react-redux";
-import { changeName, increase } from '../store/userSlice.js'
-import { addAmount } from './Store.js'
+// import { changeName, increase } from '../store/userSlice.js'
+import { addAmount, removeAmount } from './Store.js'
 
 function Cart(){
     let state = useSelector((state)=> state)
@@ -10,12 +10,11 @@ function Cart(){
 
     return(
         <div>
-
-            { state.user.name } { state.user.age }의 장바구니
+            {/* { state.user.name } { state.user.age }의 장바구니
             <button onClick={()=>{
                 dispatch(changeName())
                 dispatch(increase(10))
-            }}>꺄</button>
+            }}>꺄</button> */}
 
             <table>
                 <thead>
@@ -35,9 +34,11 @@ function Cart(){
                                 <td>{ state.cart[i].count }</td>
                                 <td>
                                     <button onClick={()=>{
-                                        // e.stopPropagation();
                                         dispatch(addAmount(state.cart[i].id))
                                     }}>+</button>
+                                    <button onClick={()=>{
+                                        dispatch(removeAmount(state.cart[i].id))
+                                    }}>-</button>
                                 </td>
                             </tr>
                         )

@@ -34,7 +34,10 @@ const Detail = (props) => {
                     <h2>{find.title}</h2>
                     <p className='detail_tag'>{find.tag}</p>
                     <p className='detail_price'><span>총 물품 금액</span>{find.price}원</p>
-                    <button className='detail_cart'>장바구니</button>
+                    <button className='detail_cart' onClick={()=>{
+                        
+                    }}
+                    >장바구니</button>
                     <button className='detail_buy'>주문하기</button>
                 </div>
                 <div className='detail_txt_wrap'>

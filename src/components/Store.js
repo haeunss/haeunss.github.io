@@ -1,11 +1,6 @@
 import {configureStore, createSlice} from '@reduxjs/toolkit'
 import user from '../store/userSlice.js'
 
-let stock = createSlice({
-    name: 'stock',
-    initialState: [10, 11, 12],
-})
-
 let cart = createSlice({
     name: 'cart',
     initialState:[
@@ -18,16 +13,25 @@ let cart = createSlice({
         addAmount(state,action){
             let num = state.findIndex((a) => a.id === action.payload)
             state[num].count++
+        },
+        //임시로 팝업만 설정해둠
+        //장바구니 추가(data.js), 삭제, 체크(js) 필요
+        removeAmount(state,action){
+            let num = state.findIndex((a) => a.id === action.payload)
+            state[num].count--
+            if(state[num].count<0){
+                alert('삭제하시겠습니까?')
+                state[num].count = 0
+            }
         }
     }
 })
 
-export let { addAmount } = cart.actions
+export let { addAmount,removeAmount } = cart.actions
 
 export default configureStore({
     reducer:{
         user: user.reducer,
-        stock: stock.reducer,
         cart: cart.reducer
     }
 })
