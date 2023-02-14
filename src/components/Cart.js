@@ -7,7 +7,7 @@ function Cart(){
     let cart = useSelector((state)=> state.cart)
     let user = useSelector((state)=> state.user)
     let dispatch = useDispatch()
-    console.log(cart)
+    // console.log(cart)
 
     return(
         <div>
