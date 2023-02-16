@@ -48,7 +48,7 @@
 ## 🚧프로젝트 구성
 #### - JSX, CSS로 구성한 꼬띠샵 공통 상하단
 #### - Router를 이용해 부드럽게 렌더링한 상단
-#### - React-slick라이브러리로 slide 구현
+#### - React-slick라이브러리로 slide 구현 (변경사항 사진 수정 예정)
 ![main](https://user-images.githubusercontent.com/117965325/214508843-69ce6f8e-caf2-44e5-a2ad-a200b4dd6850.PNG)
 
 <br/>
@@ -69,5 +69,8 @@
 #### - useEffect와 setTimeout으로 품절임박 안내창 구현
 ![detail](https://user-images.githubusercontent.com/117965325/214508869-f3387f1d-9f71-4be4-a1fb-c276c55f1d95.PNG)
 
+<br/>
+
+#### - 장바구니 추가예정
 <br/>
 <br/>
