@@ -9,7 +9,8 @@ function Cart(){
     let dispatch = useDispatch()
 
     return(
-        <div>
+        <div className='cart_wrap'>
+            <h1>장바구니</h1>
             {/* { state.user.name } { state.user.age }의 장바구니
             <button onClick={()=>{
                 dispatch(changeName())
@@ -44,6 +45,7 @@ function Cart(){
                         )
                     }
                 </tbody>
+                {/* 상품 개별 가격 및 총계 / 전체 구매하기 버튼 추가하기 */}
             </table>
         </div>
     )

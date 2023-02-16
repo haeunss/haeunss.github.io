@@ -4,8 +4,7 @@ import user from '../store/userSlice.js'
 let cart = createSlice({
     name: 'cart',
     initialState:[
-        // {id : 0, name : 'White and Black', count : 2},
-        // {id : 1, name : 'Grey Yordan', count : 1},
+
     ],
     reducers:{
         addAmount(state,action){
@@ -14,7 +13,7 @@ let cart = createSlice({
         },
         //임시로 팝업만 설정해둠
         //1 추가시 이미지 뜨도록
-        //2 추가시 수량추가 해결
+        //2 추가시 중복 추가 해결
         //3 삭제, 체크(js) 필요
         //4 디자인 수정
         removeAmount(state,action){

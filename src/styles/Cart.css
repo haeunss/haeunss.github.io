@@ -1,8 +1,18 @@
 @charset "utf-8";
 
+.cart_wrap > h1{
+    font-family: NanumSquareNeo4;
+    text-align: center;
+    padding-top: 50px;
+    padding-bottom: 10px;
+    margin: 0 auto;
+    width: 1100px;
+}
+
 table{
     margin: 50px auto;
     text-align: center;
+    /* border: 1px solid red; */
 }
 th{
     border-bottom: 2px solid black;
