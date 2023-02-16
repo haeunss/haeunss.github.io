@@ -38,7 +38,9 @@
 .product_wrap:nth-of-type(9),
 .product_wrap:nth-of-type(13),
 .product_wrap:nth-of-type(17),
-.product_wrap:nth-of-type(21){
+.product_wrap:nth-of-type(21),
+.product_wrap:nth-of-type(25),
+.product_wrap:nth-of-type(29){
     margin-right: 0;
 }
 .all_product_img_wrap{
@@ -107,6 +109,7 @@
 .outdoor_indoor:nth-of-type(8),
 .outdoor_indoor:nth-of-type(12),
 .outdoor_indoor:nth-of-type(16),
-.outdoor_indoor:nth-of-type(20){
+.outdoor_indoor:nth-of-type(20),
+.outdoor_indoor:nth-of-type(24){
     margin-right: 0;
 }

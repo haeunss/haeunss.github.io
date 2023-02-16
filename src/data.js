@@ -1,94 +1,3 @@
-let data = [
-    {
-        id:0,
-        title:"펫 소 시크 Retractable dog leash 자동 리드줄 - Bon Voyage",
-        brand:"BRAND : PET SO CHIC",
-        contents:"내용",
-        price:55000,
-        tag:"#리드줄 #자동 #유니크 #일러스트",
-        image:"/images/best0.png",
-        detail_image:"../images/bestdetail_0.png",
-        detail_txt:"../images/detail_txt1.jpg"
-    },
-    {
-        id:1,
-        title:"맥스본 Curly Knit Jumper 컬리 니트 점퍼 - Sand 샌드",
-        brand:"BRAND : MAXBONE",
-        contents:"내용",
-        price:82000,
-        tag:"#헐리우드 #패션 #니트 #브라운",
-        image : "/images/best1.png",
-        detail_image : "../images/bestdetail_1.png",
-        detail_txt:"../images/detail_txt2.jpg"
-    },
-    {
-        id:2,
-        title:"맥스본 Christian Cowan x max-bone Jumper 크리스찬 코완 x 맥스본 점퍼 - Mint 민트",
-        brand:"BRAND : MAXBONE",
-        contents:"내용",
-        price:138000,
-        tag:"#헐리우드 #패션 #민트",
-        image : "/images/best2.png",
-        detail_image : "../images/bestdetail_2.png",
-        detail_txt:"../images/detail_txt3.jpg"
-    },
-    {
-        id:3,
-        title:"밀크앤페퍼 TORTUE Toy 거북이 강아지 장난감",
-        brand:"BRAND : MILK & PEPPER",
-        contents:"내용",
-        price:17500,
-        tag:"#동물모양 #삑삑이 #거북이 #장난감",
-        image : "/images/best3.png",
-        detail_image : "../images/bestdetail_3.png",
-        detail_txt:"../images/detail_txt4.jpg"
-    },
-    {
-        id:4,
-        title:"펫 소 시크 Tiny dog collar 강아지 반다나 - Small is the new big thing",
-        brand:"BRAND : PET SO CHIC",
-        contents:"내용",
-        price:39000,
-        tag:"#반다나 #스카이블루 #일러스트",
-        image : "/images/best4.png",
-        detail_image : "../images/bestdetail_4.png",
-        detail_txt:"../images/detail_txt5.jpg"
-    },
-    {
-        id:5,
-        title:"밀크앤페퍼 지니어스 스웨터 강아지니트 강아지겨울옷",
-        brand:"BRAND : MILK & PEPPER",
-        contents:"내용",
-        price:92500,
-        tag:"#프렌치감성 #프리미엄니트웨어 #데일리룩",
-        image : "/images/best5.png",
-        detail_image : "../images/bestdetail_5.png",
-        detail_txt:"../images/detail_txt6.jpg"
-    },
-    {
-        id:6,
-        title:"밀크앤페퍼 STARDUST Pink Leash 스타더스트 핑크 리드줄",
-        brand:"BRAND : MAXBONE",
-        contents:"내용",
-        price:138000,
-        tag:"#리드줄 #천연가죽 #핑크",
-        image : "/images/best6.png",
-        detail_image : "../images/bestdetail_6.png",
-        detail_txt:"../images/detail_txt7.jpg"
-    },
-    {
-        id:7,
-        title:"펫 소 시크 Dog collar 목줄 Orange Tangerine오렌지 탠저린",
-        brand:"BRAND : PET SO CHIC",
-        contents:"내용",
-        price:99500,
-        tag:"#목줄 #천연가죽 #오렌지탠저린",
-        image : "/images/best7.png",
-        detail_image : "../images/bestdetail_7.png",
-        detail_txt:"../images/detail_txt8.jpg"
-    }
-]
-
 let data_all = [
     {
         id:0,
@@ -99,7 +8,8 @@ let data_all = [
         image : "/images/all_product0.jpg",
         detail_txt:"/images/all_detail1.jpg",
         name:1,
-        brandnum:3
+        brandnum:3,
+        best: 0,
     },
     {
         id:1,
@@ -110,7 +20,8 @@ let data_all = [
         image : "/images/all_product1.jpg",
         detail_txt:"/images/all_detail2.jpg",
         name:1,
-        brandnum:3
+        brandnum:3,
+        best: 0,
     },
     {
         id:2,
@@ -132,7 +43,8 @@ let data_all = [
         image : "/images/all_product3.jpg",
         detail_txt:"/images/all_detail4.jpg",
         name:1,
-        brandnum:1
+        brandnum:1,
+        best: 0,
     },
     {
         id:4,
@@ -165,7 +77,8 @@ let data_all = [
         image : "/images/all_product6.jpg",
         detail_txt:"/images/all_detail7.jpg",
         name:1,
-        brandnum:1
+        brandnum:1,
+        best: 0,
     },
     {
         id:7,
@@ -187,7 +100,8 @@ let data_all = [
         image : "/images/all_product8.jpg",
         detail_txt:"/images/all_detail9.jpg",
         name:1,
-        brandnum:1
+        brandnum:1,
+        best: 0,
     },
     {
         id:9,
@@ -231,7 +145,8 @@ let data_all = [
         image : "/images/all_product12.jpg",
         detail_txt:"/images/all_detail13.jpg",
         name:1,
-        brandnum:2
+        brandnum:2,
+        best: 0,
     },
     {
         id:13,
@@ -240,7 +155,7 @@ let data_all = [
         price:17500,
         tag:"#귀여운 #프랑스 #동물모양 #인형 #장난감 #삑삑이",
         image : "/images/all_product13.jpg",
-        detail_txt:"/images/all_detail14.jpg",
+        detail_txt:"/images/all_detail14.png",
         name:2,
         brandnum:1
     },
@@ -275,7 +190,8 @@ let data_all = [
         image : "/images/all_product16.jpg",
         detail_txt:"/images/all_detail17.jpg",
         name:2,
-        brandnum:1
+        brandnum:1,
+        best: 0,
     },
     {
         id:17,
@@ -297,11 +213,12 @@ let data_all = [
         image : "/images/all_product18.jpg",
         detail_txt:"/images/all_detail19.jpg",
         name:2,
-        brandnum:1
+        brandnum:1,
+        best: 0,
     },
     {
         id:19,
-        title:"밀크앤페퍼_ELEPHANT Dog Toy (코끼리 강아지 장난감)",
+        title:"밀크앤페퍼_ELEPHANT Dog Toy 코끼리 강아지 장난감",
         brand:"BRAND : MILK & PEPPER",
         price:17500,
         tag:"#귀여운 #프랑스 #동물모양 #인형 #장난감 #삑삑이",
@@ -309,7 +226,95 @@ let data_all = [
         detail_txt:"/images/all_detail20.jpg",
         name:2,
         brandnum:1
-    }
+    },
+    {
+        id:20,
+        title:"밀크앤페퍼 TORTUE Toy 거북이 강아지 장난감",
+        brand:"BRAND : MILK & PEPPER",
+        price:17500,
+        tag:"#동물모양 #삑삑이 #거북이 #장난감",
+        image : "/images/all_product20.png",
+        detail_txt:"/images/all_detail21.jpg",
+        name:2,
+        brandnum:1
+    },
+    {
+        id:21,
+        title:"맥스본 Curly Knit Jumper 컬리 니트 점퍼 - Sand 샌드",
+        brand:"BRAND : MAXBONE",
+        price:82000,
+        tag:"#헐리우드 #패션 #니트 #브라운",
+        image : "/images/all_product21.png",
+        detail_txt:"/images/all_detail22.jpg",
+        name:1,
+        brandnum:2
+    },
+    {
+        id:22,
+        title:"밀크앤페퍼 지니어스 스웨터 강아지니트 강아지겨울옷",
+        brand:"BRAND : MILK & PEPPER",
+        price:92500,
+        tag:"#프렌치감성 #프리미엄니트웨어 #데일리룩",
+        image : "/images/all_product22.png",
+        detail_txt:"/images/all_detail23.jpg",
+        name:1,
+        brandnum:1
+    },
+    {
+        id:23,
+        title:"맥스본 Christian Cowan x max-bone Jumper 크리스찬 코완 x 맥스본 점퍼 - Mint 민트",
+        brand:"BRAND : MAXBONE",
+        price:138000,
+        tag:"#헐리우드 #패션 #민트",
+        image : "/images/all_product23.png",
+        detail_txt:"/images/all_detail24.jpg",
+        name:1,
+        brandnum:2
+    },
+    {
+        id:24,
+        title:"밀크앤페퍼 STARDUST Pink Leash 스타더스트 핑크 리드줄",
+        brand:"BRAND : MILK & PEPPER",
+        price:138000,
+        tag:"#리드줄 #천연가죽 #핑크",
+        image : "/images/all_product24.png",
+        detail_txt:"/images/all_detail25.jpg",
+        name:1,
+        brandnum:1
+    },
+    {
+        id:25,
+        title:"펫 소 시크 Dog collar 목줄 Orange Tangerine오렌지 탠저린",
+        brand:"BRAND : PET SO CHIC",
+        price:99500,
+        tag:"#목줄 #천연가죽 #오렌지탠저린",
+        image : "/images/all_product25.png",
+        detail_txt:"/images/all_detail26.jpg",
+        name:1,
+        brandnum:3
+    },
+    {
+        id:26,
+        title:"펫 소 시크 Retractable dog leash 자동 리드줄 - Bon Voyage",
+        brand:"BRAND : PET SO CHIC",
+        price:55000,
+        tag:"#리드줄 #자동 #유니크 #일러스트",
+        image : "/images/all_product26.png",
+        detail_txt:"/images/all_detail27.jpg",
+        name:1,
+        brandnum:3
+    },
+    {
+        id:27,
+        title:"펫 소 시크 Tiny dog collar 강아지 반다나 - Small is the new big thing",
+        brand:"BRAND : PET SO CHIC",
+        price:39000,
+        tag:"#반다나 #스카이블루 #일러스트",
+        image : "/images/all_product27.png",
+        detail_txt:"/images/all_detail28.jpg",
+        name:1,
+        brandnum:3
+    },
 ]
 
-export {data, data_all}
+export {data_all}

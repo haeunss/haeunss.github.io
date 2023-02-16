@@ -6,7 +6,6 @@ import Banner from './components/Banner'
 import Detail from "./components/Detail"
 import Footer from './components/Footer'
 import Main from './components/Main'
-import MainDetail from './components/MainDetail'
 import ScrollBtn from './components/ScrollBtn'
 import ScrollToTop from './components/ScrollToTop'
 import Top from './components/Top'
@@ -16,12 +15,11 @@ import MilkPepper from './components/MilkPepper'
 import MaxBone from './components/MaxBone'
 import PetSoChic from './components/PetSoChic'
 import Cart from './components/Cart'
-import { data, data_all } from './data.js'
+import { data_all } from './data.js'
 import './styles/Modal.css'
 
 function App() {
 
-  let [best] = useState(data)
   let [all,setAll] = useState(data_all)
   const [modal, setModal] = useState(true);
 
@@ -32,9 +30,8 @@ function App() {
        {modal == true ? <Modal modal={modal} setModal={setModal}/> : null}
       <Top/>
       <Routes>
-        <Route path="/" element={<><Banner /><Main best={best} /></>} />
-        <Route path="/detail/:id" element={<Detail best={best} all={all} setAll={setAll} />} />
-        <Route path="/maindetail/:id" element={<MainDetail best={best} />} />
+        <Route path="/" element={<><Banner /><Main all={all} setAll={setAll} /></>} />
+        <Route path="/detail/:id" element={<Detail all={all} setAll={setAll} />} />
         <Route path="/top/cart" element={<Cart />} />
         <Route path="/top/allprod" element={<AllProd all={all} setAll={setAll} />} /> 
         <Route path="/top/outdoor" element={<OutDoor all={all} setAll={setAll} />} /> 

@@ -1,17 +1,20 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import '../styles/Main.css'
-import maindetail from './MainDetail'
+// import maindetail from './MainDetail'
 
 const Main = (props) => {
+
+  let navigate = useNavigate()
+  var [best, setBest] = useState(props.all.filter(function(data){ return data.best === 0}))
 
     return(
       <>
         <div className='best'>
            <h1>월간베스트</h1>
            <div className='best_product_all'>
-             { props.best.map((a, i)=>{
-               return<Best best={props.best[i]} i={i} key={i} maindetail={maindetail}/>
+             { best.map((a, i)=>{
+               return<Best best={best[i]} i={i} key={i} navigate={navigate} />
              })}
             <p className='best_product_bm'>
               베스트 랭크 이미지
@@ -32,14 +35,19 @@ const Main = (props) => {
 
 function Best(props){
     let navigate = useNavigate();
-    
     return( 
-      <div className='best_product' onClick={()=>{navigate('/maindetail/'+props.i)}}>   
+      <div className='best_product' onClick={()=>{navigate('/detail/'+props.best.id)}}>   
         <p className='best_product_img'>
-          <img src={props.best.image} width='296' height='296' alt='베스트 상품 이미지' />베스트 상품 이미지</p>
+          <img src={props.best.image} width='295' height='381' alt='베스트 상품 이미지' />베스트 상품 이미지</p>
         <h4>{props.best.title}</h4>
         <p className="best_product_price">{props.best.price}원</p>
       </div>
+      // <div className='best_product' onClick={()=>{navigate('/maindetail/'+props.i)}}>   
+      //   <p className='best_product_img'>
+      //     <img src={props.best.image} width='296' height='296' alt='베스트 상품 이미지' />베스트 상품 이미지</p>
+      //   <h4>{props.best.title}</h4>
+      //   <p className="best_product_price">{props.best.price}원</p>
+      // </div>
     )
 }
 

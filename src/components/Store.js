@@ -4,10 +4,8 @@ import user from '../store/userSlice.js'
 let cart = createSlice({
     name: 'cart',
     initialState:[
-        {id : 0, name : 'White and Black', count : 2},
-        {id : 1, name : 'Grey Yordan', count : 1},
-        {id : 2, name : 'Lonely RM', count : 4},
-        {id : 3, name : 'Harry Potter', count : 2}
+        // {id : 0, name : 'White and Black', count : 2},
+        // {id : 1, name : 'Grey Yordan', count : 1},
     ],
     reducers:{
         addAmount(state,action){
@@ -15,7 +13,10 @@ let cart = createSlice({
             state[num].count++
         },
         //임시로 팝업만 설정해둠
-        //장바구니 추가(data.js), 삭제, 체크(js) 필요
+        //1 추가시 이미지 뜨도록
+        //2 추가시 수량추가 해결
+        //3 삭제, 체크(js) 필요
+        //4 디자인 수정
         removeAmount(state,action){
             let num = state.findIndex((a) => a.id === action.payload)
             state[num].count--
@@ -23,11 +24,14 @@ let cart = createSlice({
                 alert('삭제하시겠습니까?')
                 state[num].count = 0
             }
+        },
+        addItem(state,action){
+            state.push(action.payload)
         }
     }
 })
 
-export let { addAmount,removeAmount } = cart.actions
+export let { addAmount,removeAmount,addItem } = cart.actions
 
 export default configureStore({
     reducer:{

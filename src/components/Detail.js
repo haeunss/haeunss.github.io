@@ -1,10 +1,13 @@
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import '../styles/Detail.css';
+import { useDispatch } from "react-redux";
+import { addItem } from './Store.js'
 
 const Detail = (props) => {
     
     let [alert, setAlert] = useState(true);
+    let dispatch = useDispatch()
     
     useEffect(()=>{
         let timer = setTimeout(()=>{
@@ -14,7 +17,6 @@ const Detail = (props) => {
             clearTimeout(timer)
         }
     })
-
 
     let {id} = useParams();
     let find = props.all.find(function(x){
@@ -35,10 +37,11 @@ const Detail = (props) => {
                     <p className='detail_tag'>{find.tag}</p>
                     <p className='detail_price'><span>총 물품 금액</span>{find.price}원</p>
                     <button className='detail_cart' onClick={()=>{
-                        
+                        dispatch(addItem( {id : find.id, name : find.title, count : 1} ))
                     }}
                     >장바구니</button>
-                    <button className='detail_buy'>주문하기</button>
+                    <button className='detail_buy'
+                    >주문하기</button>
                 </div>
                 <div className='detail_txt_wrap'>
                     <h1>상세정보</h1>
