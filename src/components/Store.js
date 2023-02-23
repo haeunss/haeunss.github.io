@@ -8,25 +8,30 @@ let cart = createSlice({
     ],
     reducers:{
         addAmount(state,action){
-            let num = state.findIndex((a) => a.id === action.payload)
-            state[num].count++
+            let num = state.findIndex((a) => a.id === action.payload);
+            state[num].count++;
         },
-        //임시로 팝업만 설정해둠
+        //팝업만들기 
         //1 추가시 이미지 뜨도록
-        //2 추가시 중복 추가 해결
-        //3 삭제, 체크(js) 필요
+        //3 체크(js) 필요 (선택삭제, 전체삭제 만들기)
         //4 디자인 수정
         removeAmount(state,action){
-            let num = state.findIndex((a) => a.id === action.payload)
-            state[num].count--
-            if(state[num].count<0){
-                alert('삭제하시겠습니까?')
-                state[num].count = 0
+            let num = state.findIndex((a) => a.id == action.payload);
+            state[num].count--;
+            //상품수가 0이 되면 삭제
+            if(state[num].count < 1){
+                state.splice(num,1)
             }
         },
         addItem(state,action){
-            state.push(action.payload)
-        }
+            let num = state.findIndex((a) => a.id == action.payload.id);
+            //상품 중복 추가시
+            if (num >= 0) {
+                state[num].count++;
+            } else if (num == -1)  {
+                state.push(action.payload);
+            }
+        }, 
     }
 })
 

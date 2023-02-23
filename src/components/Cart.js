@@ -11,12 +11,6 @@ function Cart(){
     return(
         <div className='cart_wrap'>
             <h1>장바구니</h1>
-            {/* { state.user.name } { state.user.age }의 장바구니
-            <button onClick={()=>{
-                dispatch(changeName())
-                dispatch(increase(10))
-            }}>꺄</button> */}
-
             <table>
                 <thead>
                     <tr>
