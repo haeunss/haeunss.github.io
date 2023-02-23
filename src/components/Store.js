@@ -1,27 +1,33 @@
 import {configureStore, createSlice} from '@reduxjs/toolkit'
 import user from '../store/userSlice.js'
+import { useNavigate } from 'react-router-dom';
+
 
 let cart = createSlice({
     name: 'cart',
     initialState:[
-
+        
     ],
     reducers:{
         addAmount(state,action){
             let num = state.findIndex((a) => a.id === action.payload);
             state[num].count++;
         },
-        //팝업만들기 
         //1 추가시 이미지 뜨도록
         //3 체크(js) 필요 (선택삭제, 전체삭제 만들기)
-        //4 디자인 수정
         removeAmount(state,action){
             let num = state.findIndex((a) => a.id == action.payload);
-            state[num].count--;
+                state[num].count--;
             //상품수가 0이 되면 삭제
             if(state[num].count < 1){
-                state.splice(num,1)
-            }
+                if (window.confirm("정말 삭제합니까?")) {
+                    alert("삭제되었습니다.");
+                    state.splice(num,1);
+                } else {
+                    alert("취소합니다.");
+                    state[num].count++;
+                }
+            };
         },
         addItem(state,action){
             let num = state.findIndex((a) => a.id == action.payload.id);
@@ -30,9 +36,17 @@ let cart = createSlice({
                 state[num].count++;
             } else if (num == -1)  {
                 state.push(action.payload);
+                //물건 추가하고 장바구니로 이동 구현하기
+                // if (window.confirm("장바구니에 상품을 담았습니다. \n이동하시겠습니까?")) {
+                //     return(
+                //         navigate('/top/cart')
+                //     )
+                // }else{
+                //     return null;
+                // }
             }
-        }, 
-    }
+        },
+    },
 })
 
 export let { addAmount,removeAmount,addItem } = cart.actions

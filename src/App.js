@@ -32,7 +32,7 @@ function App() {
       <Routes>
         <Route path="/" element={<><Banner /><Main all={all} setAll={setAll} /></>} />
         <Route path="/detail/:id" element={<Detail all={all} setAll={setAll} />} />
-        <Route path="/top/cart" element={<Cart />} />
+        <Route path="/top/cart" element={<Cart  all={all} setAll={setAll} />} />
         <Route path="/top/allprod" element={<AllProd all={all} setAll={setAll} />} /> 
         <Route path="/top/outdoor" element={<OutDoor all={all} setAll={setAll} />} /> 
         <Route path="/top/indoor" element={<InDoor all={all} setAll={setAll} />} /> 

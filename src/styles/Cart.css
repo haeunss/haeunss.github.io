@@ -6,31 +6,73 @@
     padding-top: 50px;
     padding-bottom: 10px;
     margin: 0 auto;
-    width: 1100px;
+    width: 1290px;
 }
 
 table{
     margin: 50px auto;
     text-align: center;
-    /* border: 1px solid red; */
-}
-th{
+    width: 1290px;
+}th{
     border-bottom: 2px solid black;
-    height: 40px;
 }
 td{
     border-bottom: 2px solid #ccc;
+}
+tfoot > th{
     height: 40px;
 }
-th:nth-child(1){
-    width: 80px;
+tfoot > td{
+    height: 40px;
 }
-th:nth-child(2){
-    width: 440px;
+tbody > tr > td{
+    height: 210px;
 }
-th:nth-child(3){
-    width: 140px;
+
+
+/* 여기부터 */
+tbody > tr > td:nth-child(1){
 }
-th:nth-child(4){
-    width: 140px;
+tbody > tr > td:nth-child(3){
+    text-align: left;
+    font-size: 18px;
+    line-height: 30px;
+    padding: 10px;
+}
+tbody > tr > td:nth-child(4){
+
+}
+tbody > tr > td:nth-child(5) > div{
+    display: inline-block;
+    border: 1px solid red;
+    width: 100px;
+    height: 30px;
+    
+}
+tbody > tr > td:nth-child(5) > div > p,
+tbody > tr > td:nth-child(5) > div > button{
+    float: left;
+    margin: 0 6px;
+}
+tbody > tr > td:nth-child(5) > div > button{
+    border: none;
+}
+tbody > tr > td:nth-child(6){
+
+}
+
+
+
+.cart_price_ko > td{
+    border-bottom: none;
+}
+.cart_price_num > td{
+    border-top: none;
+}
+.cart_btn{
+    width: 1290px;
+    text-align: center;
+    margin: 50px auto;
+}
+.cart_btn > button{
 }

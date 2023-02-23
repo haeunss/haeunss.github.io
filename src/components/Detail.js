@@ -35,9 +35,10 @@ const Detail = (props) => {
                     <p className='share'><img src={process.env.PUBLIC_URL + '/images/share.png'} width='35' height='35' alt='공유하기사진'/></p>
                     <h2>{find.title}</h2>
                     <p className='detail_tag'>{find.tag}</p>
+                    <p>무료배송</p>
                     <p className='detail_price'><span>총 물품 금액</span>{find.price}원</p>
                     <button className='detail_cart' onClick={()=>{
-                        dispatch(addItem( {id : find.id, name : find.title, count : 1} ))
+                        dispatch(addItem( {id : find.id, name : find.title, count : 1, image : find.image, price : find.price, brand : find.brand} ))
                     }}
                     >장바구니</button>
                     <button className='detail_buy'

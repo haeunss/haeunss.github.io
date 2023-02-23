@@ -1,46 +1,63 @@
 import '../styles/Cart.css';
 import React from 'react'
 import { useDispatch, useSelector } from "react-redux";
-// import { changeName, increase } from '../store/userSlice.js'
 import { addAmount, removeAmount } from './Store.js'
 
-function Cart(){
+const Cart = (props) => {
+    
     let state = useSelector((state)=> state)
     let dispatch = useDispatch()
 
     return(
         <div className='cart_wrap'>
             <h1>장바구니</h1>
-            <table>
+            <table className='cart_table'>
                 <thead>
                     <tr>
-                        <th>#</th>
-                        <th>상품명</th>
-                        <th>수량</th>
-                        <th>변경하기</th>
+                        <th colspan="6">판매자 설정에 따라, 개별 배송되는 상품이 있습니다.</th>
                     </tr>
                 </thead>
                 <tbody>
                     {
                         state.cart.map((a,i)=>
                             <tr key={i}>
-                                <td>{ state.cart[i].id }</td>
-                                <td>{ state.cart[i].name }</td>
-                                <td>{ state.cart[i].count }</td>
                                 <td>
-                                    <button onClick={()=>{
-                                        dispatch(addAmount(state.cart[i].id))
-                                    }}>+</button>
-                                    <button onClick={()=>{
-                                        dispatch(removeAmount(state.cart[i].id))
-                                    }}>-</button>
+                                    <input type="checkbox" name="chk" value="chk" />
                                 </td>
+                                <td><img src={state.cart[i].image} alt='상품이미지' width='155' height='200' /></td>
+                                <td>{ state.cart[i].brand }<br/>{ state.cart[i].name }</td>
+                                <td>{ state.cart[i].price }원</td>
+                                {/* <td>{ state.cart[i].count }</td> */}
+                                <td>
+                                    <div>
+                                        <button onClick={()=>{
+                                            dispatch(removeAmount(state.cart[i].id))
+                                        }}>-</button>
+                                        <p>{ state.cart[i].count }</p>
+                                        <button onClick={()=>{
+                                            dispatch(addAmount(state.cart[i].id))
+                                        }}>+</button>
+                                    </div>
+                                </td>
+                                <td>X</td>
                             </tr>
                         )
                     }
                 </tbody>
-                {/* 상품 개별 가격 및 총계 / 전체 구매하기 버튼 추가하기 */}
+                <tfoot>
+                    <tr className='cart_price_ko'>
+                        <td colspan="6">선택 상품 금액 + 총 배송비 = 주문금액</td>
+                    </tr>
+                    <tr className='cart_price_num'>
+                        <td colspan="6">선택 상품 금액 원 + 0 원 = 전채금액 원</td>
+                    </tr>
+                </tfoot>
             </table>
+            <div className='cart_btn'>
+                <button>선택상품 삭제하기</button>
+                <button>선택상품 구매하기</button>
+                <button>전체상품 구매하기</button>
+            </div>
         </div>
     )
 }
