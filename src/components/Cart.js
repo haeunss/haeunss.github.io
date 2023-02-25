@@ -1,7 +1,7 @@
 import '../styles/Cart.css';
 import React from 'react'
 import { useDispatch, useSelector } from "react-redux";
-import { addAmount, removeAmount, removeItem } from './Store.js'
+import { addAmount, removeAmount, removeItem, removeItemAll } from './Store.js'
 
 const Cart = (props) => {
     
@@ -84,6 +84,9 @@ const Cart = (props) => {
             </div>
             <div className='cart_btn'>
                 <button>선택상품 삭제하기</button>
+                <button onClick={()=>{
+                        dispatch(removeItemAll())
+                }}>전체상품 삭제하기</button>
                 <button>선택상품 구매하기</button>
                 <button>전체상품 구매하기</button>
             </div>

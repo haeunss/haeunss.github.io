@@ -48,14 +48,18 @@ let cart = createSlice({
             }
         },
         removeItem(state,action){
-            //상품 ㄴ개별 삭제
+            //상품 개별 삭제
             var list = state.filter((a) => a.id !== action.payload);
             return list;
+        },
+        removeItemAll(state,action){
+            //전체 상품 삭제
+            state.splice(0, state.length);
         },
     },
 })
 
-export let { addAmount, removeAmount, addItem, removeItem } = cart.actions
+export let { addAmount, removeAmount, addItem, removeItem, removeItemAll } = cart.actions
 
 export default configureStore({
     reducer:{
