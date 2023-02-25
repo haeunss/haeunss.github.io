@@ -8,13 +8,21 @@ const Cart = (props) => {
     let state = useSelector((state)=> state)
     let dispatch = useDispatch()
 
+    let total = [0];
+    for(let a=0; a<state.cart.length; a++){
+        let b = state.cart[a].price * state.cart[a].count;
+        total.push(b);
+        const add = total => total.reduce((a, b) => a + b, 0);
+        var sum = add(total);
+    }
+
     return(
         <div className='cart_wrap'>
             <h1>장바구니</h1>
             <table className='cart_table'>
                 <thead>
                     <tr>
-                        <th colspan="6">판매자 설정에 따라, 개별 배송되는 상품이 있습니다.</th>
+                        <th colSpan="6">판매자 설정에 따라, 개별 배송되는 상품이 있습니다.</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -46,10 +54,10 @@ const Cart = (props) => {
                 </tbody>
                 <tfoot>
                     <tr className='cart_price_ko'>
-                        <td colspan="6">선택 상품 금액 + 총 배송비 = 주문금액</td>
+                        <td colSpan="6">선택 상품 금액 + 총 배송비 = 주문금액</td>
                     </tr>
                     <tr className='cart_price_num'>
-                        <td colspan="6">선택 상품 금액 원 + 0 원 = 전채금액 원</td>
+                        <td colSpan="6">전체 상품 금액 = {sum}원</td>
                     </tr>
                 </tfoot>
             </table>
