@@ -13,8 +13,9 @@ let cart = createSlice({
             let num = state.findIndex((a) => a.id === action.payload);
             state[num].count++;
         },
-        //1 추가시 이미지 뜨도록
+        //2 선택 상품의 가격
         //3 체크(js) 필요 (선택삭제, 전체삭제 만들기)
+        //4 5만원 이상시 무료배송
         removeAmount(state,action){
             let num = state.findIndex((a) => a.id == action.payload);
                 state[num].count--;
@@ -46,10 +47,15 @@ let cart = createSlice({
                 // }
             }
         },
+        removeItem(state,action){
+            //상품 ㄴ개별 삭제
+            var list = state.filter((a) => a.id !== action.payload);
+            return list;
+        },
     },
 })
 
-export let { addAmount,removeAmount,addItem } = cart.actions
+export let { addAmount, removeAmount, addItem, removeItem } = cart.actions
 
 export default configureStore({
     reducer:{

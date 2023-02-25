@@ -1,7 +1,7 @@
 import '../styles/Cart.css';
 import React from 'react'
 import { useDispatch, useSelector } from "react-redux";
-import { addAmount, removeAmount } from './Store.js'
+import { addAmount, removeAmount, removeItem } from './Store.js'
 
 const Cart = (props) => {
     
@@ -10,6 +10,9 @@ const Cart = (props) => {
 
     let total = [0];
     for(let a=0; a<state.cart.length; a++){
+        //주문 품목 개수
+        var num = state.cart.length;
+        //전체 상품 금액
         let b = state.cart[a].price * state.cart[a].count;
         total.push(b);
         const add = total => total.reduce((a, b) => a + b, 0);
@@ -47,20 +50,38 @@ const Cart = (props) => {
                                         }}>+</button>
                                     </div>
                                 </td>
-                                <td>X</td>
+                                <td>
+                                    <button
+                                     onClick={()=>{
+                                        dispatch(removeItem(state.cart[i].id))
+                                    }}>X</button>
+                                </td>
                             </tr>
                         )
                     }
                 </tbody>
-                <tfoot>
+                {/* <tfoot>
                     <tr className='cart_price_ko'>
                         <td colSpan="6">선택 상품 금액 + 총 배송비 = 주문금액</td>
                     </tr>
                     <tr className='cart_price_num'>
                         <td colSpan="6">전체 상품 금액 = {sum}원</td>
                     </tr>
-                </tfoot>
+                </tfoot> */}
             </table>
+            <div>
+                <h5>배송비</h5>
+                <p>기본 배송료 : 무료 (총 상품금액 50,000원 이상 무료)</p>
+                <br/>
+                <h5>전체 상품 금액</h5>
+                <p>{sum}원</p>
+                <br/>
+                <h5>결제 예상 금액 내역</h5>
+                <p>주문 품목 개수 : {num}개</p>
+                <p>선택 금액 합 : 원</p>
+                <p>할인 금액 합 : -0원</p>
+                <p>배송비 무료</p>
+            </div>
             <div className='cart_btn'>
                 <button>선택상품 삭제하기</button>
                 <button>선택상품 구매하기</button>

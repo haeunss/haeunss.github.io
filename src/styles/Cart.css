@@ -17,7 +17,7 @@ table{
     border-bottom: 2px solid black;
 }
 td{
-    border-bottom: 2px solid #ccc;
+    border-bottom: 2px solid #ddd;
 }
 tfoot > th{
     height: 40px;
@@ -57,18 +57,22 @@ tbody > tr > td:nth-child(5) > div > button{
 tbody > tr > td:nth-child(5) > div > button{
     border: none;
 }
-tbody > tr > td:nth-child(6){
-
+tbody > tr > td:nth-child(6) > button{
+    border: none;
+    background-color: #fff;
 }
 
 
-
+/* tfoot */
 .cart_price_ko > td{
     border-bottom: none;
+    /* border-top: 2px solid #ddd; */
 }
 .cart_price_num > td{
     border-top: none;
 }
+
+
 .cart_btn{
     width: 1290px;
     text-align: center;
