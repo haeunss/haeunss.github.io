@@ -12,11 +12,21 @@ const Cart = (props) => {
     for(let a=0; a<state.cart.length; a++){
         //주문 품목 개수
         var num = state.cart.length;
+        //배송비
+        var deliveryFee = 3000;
         //전체 상품 금액
         let b = state.cart[a].price * state.cart[a].count;
         total.push(b);
         const add = total => total.reduce((a, b) => a + b, 0);
         var sum = add(total);
+        //배송비 무료
+        if(sum<50000){
+            sum = sum + deliveryFee;
+            deliveryFee = 3000;
+        }else{
+            sum = sum;
+            deliveryFee = 0;
+        }
     }
 
     return(
@@ -25,7 +35,7 @@ const Cart = (props) => {
             <table className='cart_table'>
                 <thead>
                     <tr>
-                        <th colSpan="6">판매자 설정에 따라, 개별 배송되는 상품이 있습니다.</th>
+                        <th colSpan="6">- 판매자 설정에 따라, 개별 배송되는 상품이 있습니다.</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -38,7 +48,6 @@ const Cart = (props) => {
                                 <td><img src={state.cart[i].image} alt='상품이미지' width='155' height='200' /></td>
                                 <td>{ state.cart[i].brand }<br/>{ state.cart[i].name }</td>
                                 <td>{ state.cart[i].price }원</td>
-                                {/* <td>{ state.cart[i].count }</td> */}
                                 <td>
                                     <div>
                                         <button onClick={()=>{
@@ -60,16 +69,8 @@ const Cart = (props) => {
                         )
                     }
                 </tbody>
-                {/* <tfoot>
-                    <tr className='cart_price_ko'>
-                        <td colSpan="6">선택 상품 금액 + 총 배송비 = 주문금액</td>
-                    </tr>
-                    <tr className='cart_price_num'>
-                        <td colSpan="6">전체 상품 금액 = {sum}원</td>
-                    </tr>
-                </tfoot> */}
             </table>
-            <div>
+            <div className='cart_info'>
                 <h5>배송비</h5>
                 <p>기본 배송료 : 무료 (총 상품금액 50,000원 이상 무료)</p>
                 <br/>
@@ -80,7 +81,7 @@ const Cart = (props) => {
                 <p>주문 품목 개수 : {num}개</p>
                 <p>선택 금액 합 : 원</p>
                 <p>할인 금액 합 : -0원</p>
-                <p>배송비 무료</p>
+                <p>배송비 : {deliveryFee}원</p>
             </div>
             <div className='cart_btn'>
                 <button>선택상품 삭제하기</button>

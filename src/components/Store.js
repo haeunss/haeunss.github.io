@@ -13,9 +13,7 @@ let cart = createSlice({
             let num = state.findIndex((a) => a.id === action.payload);
             state[num].count++;
         },
-        //2 선택 상품의 가격
-        //3 체크(js) 필요 (선택삭제, 전체삭제 만들기)
-        //4 5만원 이상시 무료배송
+        //3 체크(js) 필요 (선택삭제 만들기, 선택상품 가격만들기)
         removeAmount(state,action){
             let num = state.findIndex((a) => a.id == action.payload);
                 state[num].count--;
