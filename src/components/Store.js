@@ -53,12 +53,6 @@ let cart = createSlice({
             //전체 상품 삭제
             state.splice(0, state.length);
         },
-        noData(state,action){
-            let num = state.findIndex((a) => a.id == action.payload);
-            if(state[num].count < 1){
-                
-            }
-        },
     },
 })
 

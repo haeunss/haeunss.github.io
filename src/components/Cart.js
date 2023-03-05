@@ -2,6 +2,7 @@ import '../styles/Cart.css';
 import React from 'react'
 import { useDispatch, useSelector } from "react-redux";
 import { addAmount, removeAmount, removeItem, removeItemAll } from './Store.js'
+import { useState } from 'react';
 
 const Cart = (props) => {
     
@@ -29,13 +30,43 @@ const Cart = (props) => {
         }
     }
 
+    // 체크박스 전체선택, 일부선택
+    const [isAllChecked, setAllChecked] = useState(false);
+    const [checkedState, setCheckedState] = useState(new Array(state.cart.length).fill(false));
+
+    const handleAllCheck = () => {
+        setAllChecked((prev) => !prev);
+        let array = new Array(state.cart.length).fill(!isAllChecked);
+        setCheckedState(array);
+      };
+      
+      const handleMonoCheck = (position) => {
+        const updatedCheckedState = checkedState.map((item, index) =>
+          index === position ? !item : item
+        );
+        setCheckedState(updatedCheckedState);
+        const checkedLength = updatedCheckedState.reduce((sum, currentState) => {
+          if (currentState === true) {
+            return sum + 1;
+          }
+          return sum;
+        }, 0);
+        setAllChecked(checkedLength === updatedCheckedState.length);
+      };
+
     return(
         <div className='cart_wrap'>
             <h1>장바구니</h1>
             <table className='cart_table'>
                 <thead>
                     <tr>
-                        <th colSpan="6">- 판매자 설정에 따라, 개별 배송되는 상품이 있습니다.</th>
+                        <th colSpan="5">- 판매자 설정에 따라, 개별 배송되는 상품이 있습니다.</th>
+                        <th><input 
+                                type="checkbox"
+                                checked={isAllChecked}
+                                onChange={() => handleAllCheck()}
+                            /> 전체선택
+                        </th>
                     </tr>
                 </thead>
                 <tbody>
@@ -43,7 +74,11 @@ const Cart = (props) => {
                         state.cart.map((a,i)=>
                             <tr key={i}>
                                 <td>
-                                    <input type="checkbox" name="chk" value="chk" />
+                                    <input 
+                                        type="checkbox"
+                                        checked={checkedState[i]}
+                                        onChange={() => handleMonoCheck(i)}
+                                    />
                                 </td>
                                 <td><img src={state.cart[i].image} alt='상품이미지' width='155' height='200' /></td>
                                 <td>{ state.cart[i].brand }<br/>{ state.cart[i].name }</td>
@@ -80,7 +115,6 @@ const Cart = (props) => {
                 <h5>결제 예상 금액 내역</h5>
                 <p>주문 품목 개수 : {num}개</p>
                 <p>선택 금액 합 : 원</p>
-                <p>할인 금액 합 : -0원</p>
                 <p>배송비 : {deliveryFee}원</p>
             </div>
             <div className='cart_btn'>
