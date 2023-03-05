@@ -13,7 +13,6 @@ let cart = createSlice({
             let num = state.findIndex((a) => a.id === action.payload);
             state[num].count++;
         },
-        //3 체크(js) 필요 (선택삭제 만들기, 선택상품 가격만들기)
         removeAmount(state,action){
             let num = state.findIndex((a) => a.id == action.payload);
                 state[num].count--;
@@ -53,6 +52,12 @@ let cart = createSlice({
         removeItemAll(state,action){
             //전체 상품 삭제
             state.splice(0, state.length);
+        },
+        noData(state,action){
+            let num = state.findIndex((a) => a.id == action.payload);
+            if(state[num].count < 1){
+                
+            }
         },
     },
 })
