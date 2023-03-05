@@ -30,6 +30,7 @@ const Cart = (props) => {
         }
     }
 
+
     // 체크박스 전체선택, 일부선택
     const [isAllChecked, setAllChecked] = useState(false);
     const [checkedState, setCheckedState] = useState(new Array(state.cart.length).fill(false));
@@ -53,6 +54,7 @@ const Cart = (props) => {
         }, 0);
         setAllChecked(checkedLength === updatedCheckedState.length);
       };
+
 
     return(
         <div className='cart_wrap'>
@@ -78,6 +80,8 @@ const Cart = (props) => {
                                         type="checkbox"
                                         checked={checkedState[i]}
                                         onChange={() => handleMonoCheck(i)}
+                                        value={state.cart[i]}
+                                        name="inputValue"
                                     />
                                 </td>
                                 <td><img src={state.cart[i].image} alt='상품이미지' width='155' height='200' /></td>
@@ -113,7 +117,7 @@ const Cart = (props) => {
                 <p>{sum}원</p>
                 <br/>
                 <h5>결제 예상 금액 내역</h5>
-                <p>주문 품목 개수 : {num}개</p>
+                {/* <p>주문 품목 개수 : {num}개</p> */}
                 <p>선택 금액 합 : 원</p>
                 <p>배송비 : {deliveryFee}원</p>
             </div>
