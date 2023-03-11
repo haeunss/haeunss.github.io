@@ -1,7 +1,7 @@
 import '../styles/Cart.css';
-import React, { useState, useCallback } from 'react'
+import React, { useState, useCallback, useEffect } from 'react'
 import { useDispatch, useSelector } from "react-redux";
-import { addAmount, removeAmount, removeItem, removeItemAll, cartTest } from './Store.js'
+import { addAmount, removeAmount, removeItem, removeItemAll } from './Store.js'
 
 const Cart = (props) => {
     
@@ -16,6 +16,7 @@ const Cart = (props) => {
         let b = state.cart[a].price * state.cart[a].count;
         total.push(b);
         const add = total => total.reduce((a, b) => a + b, 0);
+        var product = add(total);
         var sum = add(total);
         //배송비 무료
         if(sum<50000){
@@ -25,10 +26,13 @@ const Cart = (props) => {
             sum = sum;
             deliveryFee = 0;
         }
+        // console.log(state.cart[a].count);
     }
 
+    //!!!!!품목 삭제시도 반영해야함
+    //!!!!!체크 후 수량 변경시 반영되지 않음
     // 체크박스 전체선택, 일부선택
-    const [isAllChecked, setAllChecked] = useState(false); //전체선택일때만 true가 됨
+    const [isAllChecked, setAllChecked] = useState(false);
     const [checkedState, setCheckedState] = useState(
         new Array(state.cart.length).fill(false)
     ); //false라는 초기값이 있는 배열 / 선택하면 true로 변경됨
@@ -39,6 +43,16 @@ const Cart = (props) => {
         setAllChecked((prev) => !prev);
         let array = new Array(state.cart.length).fill(!isAllChecked);
         setCheckedState(array);
+
+        //전체선택하면 선택상품 금액에 반영되도록
+        const allCheckedTotalPrice = checkedState.reduce(
+            (sum, currentState, index) => {
+              if (currentState === !true) {
+                  return sum + (state.cart[index].price * state.cart[index].count);
+              }
+              return sum;
+            }, 0);
+        setCheckedTotal(allCheckedTotalPrice);
       };
       
     const handleMonoCheck = (position) => {
@@ -77,13 +91,13 @@ const Cart = (props) => {
       const totalPrice = updatedCheckedState.reduce(
         (sum, currentState, index) => {
           if (currentState === true) {
-            return sum + state.cart[index].price;
-          }
-          return sum;
-        },
-        0
-      );
-      setCheckedTotal(totalPrice);
+            return sum + (state.cart[index].price * state.cart[index].count);
+        }
+        return sum;
+    },
+    0
+    );
+    setCheckedTotal(totalPrice);
     };
 
     return(
@@ -147,11 +161,12 @@ const Cart = (props) => {
                 <p>기본 배송료 : 무료 (총 상품금액 50,000원 이상 무료)</p>
                 <br/>
                 <h5>전체 상품 금액</h5>
-                <p>{sum}원</p>
+                <p>(상품금액) + (배송비) = (전체금액)</p>
+                <p>{product}원 + {deliveryFee}원 = {sum}원</p>
                 <br/>
                 <h5>결제 예상 금액 내역</h5>
                 {/* <p>주문 품목 개수 : {num}개</p> */}
-                <p>선택 금액 합 : {checkedTotal}원</p>
+                <p>선택한 상품 금액 : {checkedTotal}원</p>
                 <p>배송비 : {deliveryFee}원</p>
             </div>
             <div className='cart_btn'>

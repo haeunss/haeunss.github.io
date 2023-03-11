@@ -31,9 +31,10 @@ let cart = createSlice({
             let num = state.findIndex((a) => a.id == action.payload.id);
             //상품 중복 추가시
             if (num >= 0) {
-                state[num].count++;
+                window.confirm("이미 장바구니에 담겨있습니다.")
             } else if (num == -1)  {
                 state.push(action.payload);
+                window.confirm("장바구니에 상품을 추가하였습니다.")
                 //물건 추가하고 장바구니로 이동 구현하기
                 // if (window.confirm("장바구니에 상품을 담았습니다. \n이동하시겠습니까?")) {
                 //     return(
@@ -53,14 +54,10 @@ let cart = createSlice({
             //전체 상품 삭제
             state.splice(0, state.length);
         },
-        cartTest(state,action){
-            let num = state.findIndex((a) => a.id == action.payload.id);
-            state.push(action.payload);
-        }
     },
 })
 
-export let { addAmount, removeAmount, addItem, removeItem, removeItemAll, cartTest } = cart.actions
+export let { addAmount, removeAmount, addItem, removeItem, removeItemAll } = cart.actions
 
 export default configureStore({
     reducer:{

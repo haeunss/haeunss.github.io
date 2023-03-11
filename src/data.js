@@ -32,7 +32,7 @@ let data_all = [
         image : "/images/all_product2.jpg",
         detail_txt:"/images/all_detail3.jpg",
         name:1,
-        brandnum:1
+        brandnum:1,
     },
     {
         id:3,
@@ -55,7 +55,7 @@ let data_all = [
         image : "/images/all_product4.jpg",
         detail_txt:"/images/all_detail5.jpg",
         name:1,
-        brandnum:1
+        brandnum:1,
     },
     {
         id:5,
@@ -66,7 +66,7 @@ let data_all = [
         image : "/images/all_product5.jpg",
         detail_txt:"/images/all_detail6.jpg",
         name:1,
-        brandnum:1
+        brandnum:1,
     },
     {
         id:6,
@@ -89,7 +89,7 @@ let data_all = [
         image : "/images/all_product7.jpg",
         detail_txt:"/images/all_detail8.jpg",
         name:1,
-        brandnum:1
+        brandnum:1,
     },
     {
         id:8,
@@ -112,7 +112,7 @@ let data_all = [
         image : "/images/all_product9.jpg",
         detail_txt:"/images/all_detail10.jpg",
         name:1,
-        brandnum:2
+        brandnum:2,
     },
     {
         id:10,
@@ -123,7 +123,7 @@ let data_all = [
         image : "/images/all_product10.jpg",
         detail_txt:"/images/all_detail11.jpg",
         name:1,
-        brandnum:2
+        brandnum:2,
     },
     {
         id:11,
@@ -134,7 +134,7 @@ let data_all = [
         image : "/images/all_product11.jpg",
         detail_txt:"/images/all_detail12.jpg",
         name:1,
-        brandnum:2
+        brandnum:2,
     },
     {
         id:12,
@@ -157,7 +157,7 @@ let data_all = [
         image : "/images/all_product13.jpg",
         detail_txt:"/images/all_detail14.png",
         name:2,
-        brandnum:1
+        brandnum:1,
     },
     {
         id:14,
@@ -168,7 +168,7 @@ let data_all = [
         image : "/images/all_product14.jpg",
         detail_txt:"/images/all_detail15.jpg",
         name:2,
-        brandnum:1
+        brandnum:1,
     },
     {
         id:15,
@@ -179,7 +179,7 @@ let data_all = [
         image : "/images/all_product15.jpg",
         detail_txt:"/images/all_detail16.jpg",
         name:2,
-        brandnum:1
+        brandnum:1,
     },
     {
         id:16,
@@ -202,7 +202,7 @@ let data_all = [
         image : "/images/all_product17.jpg",
         detail_txt:"/images/all_detail18.jpg",
         name:2,
-        brandnum:1
+        brandnum:1,
     },
     {
         id:18,
@@ -225,7 +225,7 @@ let data_all = [
         image : "/images/all_product19.jpg",
         detail_txt:"/images/all_detail20.jpg",
         name:2,
-        brandnum:1
+        brandnum:1,
     },
     {
         id:20,
@@ -236,7 +236,7 @@ let data_all = [
         image : "/images/all_product20.png",
         detail_txt:"/images/all_detail21.jpg",
         name:2,
-        brandnum:1
+        brandnum:1,
     },
     {
         id:21,
@@ -247,7 +247,7 @@ let data_all = [
         image : "/images/all_product21.png",
         detail_txt:"/images/all_detail22.jpg",
         name:1,
-        brandnum:2
+        brandnum:2,
     },
     {
         id:22,
@@ -258,7 +258,7 @@ let data_all = [
         image : "/images/all_product22.png",
         detail_txt:"/images/all_detail23.jpg",
         name:1,
-        brandnum:1
+        brandnum:1,
     },
     {
         id:23,
@@ -269,7 +269,7 @@ let data_all = [
         image : "/images/all_product23.png",
         detail_txt:"/images/all_detail24.jpg",
         name:1,
-        brandnum:2
+        brandnum:2,
     },
     {
         id:24,
@@ -280,7 +280,7 @@ let data_all = [
         image : "/images/all_product24.png",
         detail_txt:"/images/all_detail25.jpg",
         name:1,
-        brandnum:1
+        brandnum:1,
     },
     {
         id:25,
@@ -291,7 +291,7 @@ let data_all = [
         image : "/images/all_product25.png",
         detail_txt:"/images/all_detail26.jpg",
         name:1,
-        brandnum:3
+        brandnum:3,
     },
     {
         id:26,
@@ -302,7 +302,7 @@ let data_all = [
         image : "/images/all_product26.png",
         detail_txt:"/images/all_detail27.jpg",
         name:1,
-        brandnum:3
+        brandnum:3,
     },
     {
         id:27,
@@ -313,7 +313,7 @@ let data_all = [
         image : "/images/all_product27.png",
         detail_txt:"/images/all_detail28.jpg",
         name:1,
-        brandnum:3
+        brandnum:3,
     },
 ]
 
