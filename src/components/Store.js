@@ -53,10 +53,14 @@ let cart = createSlice({
             //전체 상품 삭제
             state.splice(0, state.length);
         },
+        cartTest(state,action){
+            let num = state.findIndex((a) => a.id == action.payload.id);
+            state.push(action.payload);
+        }
     },
 })
 
-export let { addAmount, removeAmount, addItem, removeItem, removeItemAll } = cart.actions
+export let { addAmount, removeAmount, addItem, removeItem, removeItemAll, cartTest } = cart.actions
 
 export default configureStore({
     reducer:{
